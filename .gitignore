@@ -1,0 +1,76 @@
+################################
+# OS / Editor
+################################
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+################################
+# Node.js / JavaScript
+################################
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+dist/
+build/
+.cache/
+
+################################
+# Web / Bundler
+################################
+
+.parcel-cache/
+.next/
+.nuxt/
+.out/
+
+################################
+# Logs
+################################
+
+logs/
+*.log
+
+################################
+# Environment variables
+################################
+
+.env
+.env.local
+.env.*.local
+
+################################
+# 3D / Graphics / Media
+################################
+
+# Blender
+*.blend
+*.blend1
+*.blend2
+*.blend3
+
+# 3D formats
+*.fbx
+*.obj
+*.gltf
+*.glb
+*.usd
+*.usdz
+
+# Textures / Images (원본 자산)
+*.psd
+*.psb
+*.ai
+*.kra
+
+################################
+# Project-specific
+################################
+
+/modeling/
