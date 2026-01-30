@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <title>마쉬멜꼬</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap" rel="stylesheet">
 
-  <!-- Import Maps : 의존성 정의가 HTML 한 곳에 집중하므로 편리-->
+  <!-- Import Maps -->
   <script type="importmap">
     {
       "imports": {
@@ -14,9 +19,18 @@
       }
     }
   </script>
+<base target="_blank">
 </head>
 <body>
-<script type="module" src="./main.js"></script>
+  <!-- Overlay Container for Title and Description -->
+  <div class="overlay-container" id="introOverlay">
+    <div class="title-content clickable-area" id="titleTrigger">
+      <h1 class="main-title pacifico-regular">Meet Marshimallko</h1>
+      <p class="subtitle oswald-light">Marshimallko is a cute, squishy white chicken, soft as a marshmallow.</p>
+      <span class="click-hint oswald-extra-light">Click to meet</span>
+    </div>
+  </div>
 
+  <script type="module" src="./main.js"></script>
 </body>
 </html>

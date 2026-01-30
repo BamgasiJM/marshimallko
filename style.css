@@ -1,7 +1,130 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   overflow: hidden;
+  font-family: 'Oswald', sans-serif;
 }
+
+/* Canvas Styles */
 canvas {
   display: block;
+  transition: filter 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+canvas.blurred-3d {
+  filter: blur(15px) brightness(0.8);
+  transform: scale(1.0);
+}
+
+canvas.clear-3d {
+  filter: blur(0) brightness(1);
+  transform: scale(1.0);
+}
+
+/* Font Classes */
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oswald-light {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.oswald-extra-light {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  letter-spacing: 0.1em;
+}
+
+/* Overlay Container - anime.js ready with classes */
+.overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none; /* Let clicks pass through to canvas after fade */
+}
+
+.title-content {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 2rem;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation ready states for anime.js */
+.title-content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-content.is-hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+  pointer-events: none;
+}
+
+/* Individual elements for staggered animation later */
+.main-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.4;
+  opacity: 0.95;
+  user-select: none;
+}
+
+.click-hint {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  display: block;
+  margin-top: 2rem;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.title-content:hover .click-hint {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    padding: 0 2rem;
+  }
 }

@@ -19,6 +19,7 @@ camera.position.set(0.0, 0.5, 3.0);
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
+renderer.domElement.classList.add("blurred-3d"); // Initial blur state
 document.body.appendChild(renderer.domElement);
 
 // ---- 4. Light
@@ -78,3 +79,25 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
+
+// ---- 9. Intro Interaction Logic
+const titleTrigger = document.getElementById("titleTrigger");
+const canvas = renderer.domElement;
+
+titleTrigger.addEventListener("click", () => {
+  // Fade out title
+  titleTrigger.classList.remove("is-visible");
+  titleTrigger.classList.add("is-hidden");
+
+  // Remove blur from 3D model
+  canvas.classList.remove("blurred-3d");
+  canvas.classList.add("clear-3d");
+
+  // Optional: Remove overlay from DOM after animation for performance
+  setTimeout(() => {
+    const overlay = document.getElementById("introOverlay");
+    if (overlay) {
+      overlay.style.display = "none";
+    }
+  }, 1200); // Match CSS transition duration
+});
