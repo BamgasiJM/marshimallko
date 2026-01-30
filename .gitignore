@@ -9,7 +9,21 @@ Thumbs.db
 .idea/
 
 ################################
-# Node.js / JavaScript
+# Logs
+################################
+
+*.log
+logs/
+
+################################
+# Environment
+################################
+
+.env
+.env.local
+
+################################
+# Node.js (사용 시)
 ################################
 
 node_modules/
@@ -17,60 +31,31 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-dist/
-build/
-.cache/
-
 ################################
-# Web / Bundler
+# 3D / Graphics (원본 작업용)
 ################################
 
-.parcel-cache/
-.next/
-.nuxt/
-.out/
+# modeling 작업 폴더 전체 제외
+/modeling/
 
-################################
-# Logs
-################################
+# 중간 포맷 및 원본 3D 파일 제외
+*.fbx
+*.obj
+*.gltf
+*.usd
+*.usdz
 
-logs/
-*.log
-
-################################
-# Environment variables
-################################
-
-.env
-.env.local
-.env.*.local
-
-################################
-# 3D / Graphics / Media
-################################
-
-# Blender
+# Blender 원본
 *.blend
 *.blend1
 *.blend2
 *.blend3
 
-# 3D formats
-*.fbx
-*.obj
-*.gltf
-*.glb
-*.usd
-*.usdz
+################################
+# Graphic source files
+################################
 
-# Textures / Images (원본 자산)
 *.psd
 *.psb
 *.ai
 *.kra
-
-################################
-# Project-specific
-################################
-
-/modeling/
